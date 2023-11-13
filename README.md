@@ -24,7 +24,7 @@ npm install react-to-pdf-ts
 
 ## Usage
 
-Below is a simple example to get you started with `react-to-pdf`:
+Below is a simple example to get you started with `react-to-pdf-ts`:
 
 ```typescript
 import { convertToPdf } from 'react-to-pdf-ts';
