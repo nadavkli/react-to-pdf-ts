@@ -1,5 +1,5 @@
 {
-  "name": "react-to-pdf",
+  "name": "react-to-pdf-ts",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
