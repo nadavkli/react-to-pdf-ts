@@ -2,7 +2,7 @@ import * as puppeteer from 'puppeteer';
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 
-type ConvertToPdfOptions = {
+export type ConvertToPdfOptions = {
     outputPath: string;
     puppeteerOptions?: puppeteer.LaunchOptions;
 };
