@@ -3,7 +3,9 @@
     "outDir": "./dist",
     "module": "commonjs",
     "target": "es6",
-    "jsx": "react"
+    "jsx": "react",
+    "declaration": true,
+    "declarationMap": true
   },
   "include": [
     "src/**/*"
