@@ -1,5 +1,5 @@
 
-# react-to-pdf-ts
+# react-to-pdf
 
 This package provides a convenient and efficient way to convert React components into PDF files, leveraging the capabilities of Puppeteer in a TypeScript environment. It is designed with a focus on ease of use, flexibility, and robustness, making it an ideal solution for projects requiring PDF generation from React components.
 
@@ -19,12 +19,12 @@ This package provides a convenient and efficient way to convert React components
 Install the package using npm:
 
 ```bash
-npm install react-to-pdf-puppeteer-ts
+npm install react-to-pdf
 ```
 
 ## Usage
 
-Below is a simple example to get you started with `react-to-pdf-puppeteer-ts`:
+Below is a simple example to get you started with `react-to-pdf`:
 
 ```typescript
 import { convertToPdf } from 'react-to-pdf-puppeteer-ts';
@@ -32,9 +32,9 @@ import React from 'react';
 
 const MyComponent = <div>Hello, welcome to PDF world!</div>;
 
-convertToPdf(MyComponent, { outputPath: './my-component.pdf' })
-  .then(() => console.log('PDF has been created successfully.'))
-  .catch(error => console.error('Error encountered during PDF creation:', error));
+convertToPdf(MyComponent, {outputPath: './my-component.pdf'})
+    .then(() => console.log('PDF has been created successfully.'))
+    .catch(error => console.error('Error encountered during PDF creation:', error));
 ```
 
 ## API
