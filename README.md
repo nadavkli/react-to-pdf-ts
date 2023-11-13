@@ -24,18 +24,38 @@ npm install react-to-pdf-ts
 
 ## Usage
 
-Below is a simple example to get you started with `react-to-pdf-ts`:
+Before you begin, make sure your TypeScript configuration (`tsconfig.json`) supports JSX. Set `"jsx": "react"` in your compiler options.
+
+Additionally, when working with JSX in TypeScript, use the `.tsx` extension for your files. TypeScript treats `.tsx` files differently due to the JSX syntax.
+
+Here's a quick example to get you started with `react-to-pdf-ts` in a TypeScript project:
+
+1. **Import the package:**
 
 ```typescript
 import { convertToPdf } from 'react-to-pdf-ts';
-import React from 'react';
-
-const MyComponent = <div>Hello, welcome to PDF world!</div>;
-
-convertToPdf(MyComponent, {outputPath: './my-component.pdf'})
-    .then(() => console.log('PDF has been created successfully.'))
-    .catch(error => console.error('Error encountered during PDF creation:', error));
+import * as React from 'react';
 ```
+
+2. **Create a React Component:**
+
+You can either define a new React component or import an existing one. Here's an example of a simple component:
+
+```typescript
+const MyComponent: React.FC = () => <div>Hello PDF World!</div>;
+```
+
+3. **Convert to PDF:**
+
+Call `convertToPdf` with your component and specify the output path for the PDF file:
+
+```typescript
+convertToPdf(<MyComponent />, { outputPath: './output.pdf' })
+  .then(() => console.log('PDF created successfully'))
+  .catch(error => console.error('Error creating PDF:', error));
+```
+
+Ensure that your TypeScript project is properly set up to compile JSX.
 
 ## API
 
