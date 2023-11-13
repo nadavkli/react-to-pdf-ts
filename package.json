@@ -1,13 +1,12 @@
 {
   "name": "react-to-pdf-ts",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Nadav Klinger",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.9.0",
