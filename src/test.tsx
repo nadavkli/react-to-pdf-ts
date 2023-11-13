@@ -1,10 +1,16 @@
-import * as puppeteer from 'puppeteer';
 import {convertToPdf, ConvertToPdfOptions} from './index';
 import * as ReactDOMServer from 'react-dom/server';
 import React from 'react';
+import puppeteer from 'puppeteer';
 
 jest.mock('puppeteer', () => ({
-    launch: jest.fn(),
+    launch: jest.fn().mockResolvedValue({
+        newPage: jest.fn().mockResolvedValue({
+            setContent: jest.fn().mockResolvedValue(undefined),
+            pdf: jest.fn().mockResolvedValue(undefined),
+        }),
+        close: jest.fn().mockResolvedValue(undefined),
+    }),
 }));
 
 jest.mock('react-dom/server', () => ({
@@ -12,19 +18,6 @@ jest.mock('react-dom/server', () => ({
 }));
 
 describe('convertToPdf', () => {
-    const pdfMock = jest.fn().mockResolvedValue(undefined);
-    const newPageMock = jest.fn().mockResolvedValue({
-        setContent: jest.fn().mockResolvedValue(undefined),
-        pdf: pdfMock,
-    });
-
-    const launchMock = (puppeteer.launch as unknown as jest.Mock).mockResolvedValue({
-        newPage: newPageMock,
-        close: jest.fn().mockResolvedValue(undefined),
-    });
-
-    const renderToStaticMarkupMock = (ReactDOMServer.renderToStaticMarkup as jest.Mock).mockReturnValue('<html></html>');
-
     afterEach(() => {
         jest.clearAllMocks();
     });
@@ -36,8 +29,8 @@ describe('convertToPdf', () => {
 
         await convertToPdf(<div>Test</div>, options);
 
-        expect(launchMock).toHaveBeenCalled();
-        expect(renderToStaticMarkupMock).toHaveBeenCalled();
+        expect(puppeteer.launch).toHaveBeenCalled();
+        expect(ReactDOMServer.renderToStaticMarkup).toHaveBeenCalled();
     });
 
     it('should throw an error when generating a PDF fails', async () => {
@@ -45,11 +38,11 @@ describe('convertToPdf', () => {
             outputPath: 'test.pdf',
         };
 
-        pdfMock.mockRejectedValue(new Error('PDF generation failed'));
+        ((await (await puppeteer.launch()).newPage()).pdf as jest.Mock).mockRejectedValue(new Error('PDF generation failed'));
 
         await expect(convertToPdf(<div>Test</div>, options)).rejects.toThrow('PDF generation failed');
 
-        expect(launchMock).toHaveBeenCalled();
-        expect(renderToStaticMarkupMock).toHaveBeenCalled();
+        expect(puppeteer.launch).toHaveBeenCalled();
+        expect(ReactDOMServer.renderToStaticMarkup).toHaveBeenCalled();
     });
 });
