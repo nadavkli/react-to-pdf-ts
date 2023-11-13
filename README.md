@@ -10,10 +10,6 @@ This package provides a convenient and efficient way to convert React components
 - **TypeScript Support**: Full TypeScript support ensures type safety and developer-friendly usage.
 - **Customizable Options**: Offers a range of customization options for Puppeteer, giving you control over the PDF generation process.
 
-## Prerequisites
-
-- Puppeteer: Ensure that Puppeteer is installed and properly configured in your environment, as it is crucial for the functioning of this package.
-
 ## Installation
 
 Install the package using npm:
