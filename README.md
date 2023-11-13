@@ -27,7 +27,7 @@ npm install react-to-pdf
 Below is a simple example to get you started with `react-to-pdf`:
 
 ```typescript
-import { convertToPdf } from 'react-to-pdf-puppeteer-ts';
+import { convertToPdf } from 'react-to-pdf';
 import React from 'react';
 
 const MyComponent = <div>Hello, welcome to PDF world!</div>;
