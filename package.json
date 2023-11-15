@@ -8,6 +8,12 @@
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
+  "keywords": [
+    "react",
+    "pdf",
+    "typescript",
+    "puppeteer"
+  ],
   "author": "Nadav Klinger",
   "license": "MIT",
   "devDependencies": {
