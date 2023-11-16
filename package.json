@@ -22,7 +22,7 @@
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/nadav-klinger/react-to-pdf/issues"
+    "url": "https://github.com/nadavkli/react-to-pdf-ts/issues"
   },
   "devDependencies": {
     "@types/jest": "^29.5.8",
