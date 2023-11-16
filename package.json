@@ -1,7 +1,7 @@
 {
   "name": "react-to-pdf-ts",
   "description": "Convert a React component to PDF using Puppeteer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
