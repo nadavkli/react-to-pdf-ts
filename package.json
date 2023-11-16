@@ -1,5 +1,6 @@
 {
   "name": "react-to-pdf-ts",
+  "description": "Convert a React component to PDF using Puppeteer",
   "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,6 +17,13 @@
   ],
   "author": "Nadav Klinger",
   "license": "MIT",
+  "git": {
+    "url": "git+https://github.com/nadavkli/react-to-pdf-ts.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/nadav-klinger/react-to-pdf/issues"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.8",
     "@types/node": "^20.9.0",
@@ -29,7 +37,7 @@
     "puppeteer": "^21.5.1"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
   }
 }
