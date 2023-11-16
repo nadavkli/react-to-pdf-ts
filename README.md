@@ -53,9 +53,7 @@ import * as React from 'react';
 You can either define a new React component or import an existing one. Here's an example of a simple component:
 
 ```typescript
-const MyComponent: React.FC = () => <div>Hello
-PDF
-World! < /div>;
+const MyComponent: React.FC = () => <div>Hello PDF World!</div>;
 ```
 
 3. **Convert to PDF:**
