@@ -17,7 +17,7 @@
   ],
   "author": "Nadav Klinger",
   "license": "MIT",
-  "git": {
+  "repository": {
     "url": "git+https://github.com/nadavkli/react-to-pdf-ts.git",
     "type": "git"
   },
